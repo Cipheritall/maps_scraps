@@ -108,9 +108,8 @@ filename = now.strftime('%y%m%d_%H_%M_%S_')
 filename += f"{business_type}.xlsx"
 loot.to_excel(filename)  
 
-
 print("#############################################################")
 print("#                        Final STEP                         #")
 print("# Download the Excel file from the dashboard in the left !  #")
-print(f"# Output file saved at : {filename}      #")
+print(f"# Output file saved at : {filename} #")
 print("#############################################################")
