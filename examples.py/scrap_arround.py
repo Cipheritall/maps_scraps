@@ -5,7 +5,7 @@ paris_center = ["48.8588897","2.320041"]
 
 # Variables
 business_total = 200
-city_center = benimellal_center
+city_center = casablanca_center
 radius = "10000"
 business_type = "establishment"
 keyword = ""
