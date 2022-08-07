@@ -1,5 +1,7 @@
 # Maps api key
 api_key = "AIzaSyB8TweCbt1tm2N9TnRmhx6bMN5wguIFVAk"
+with open(".key") as f:
+    api_key = f.read()
 
 # Constants
 khribga_high_left = ["32.907227","-6.957063"]
