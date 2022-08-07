@@ -1,5 +1,5 @@
 # Maps api key
-api_key = "AIzaSyB8TweCbt1tm2N9TnRmhx6bMN5wguIFVAk"
+api_key = ""
 with open(".key") as f:
     api_key = f.read()
 
