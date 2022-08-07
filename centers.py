@@ -6,6 +6,7 @@ import datetime
 from time import sleep
 import numpy as np
 
+from config import *
 # lat: y
 # lon: x, 
 
