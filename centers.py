@@ -11,7 +11,6 @@ from config import *
 # lon: x, 
 
 
-key = "AIzaSyB8TweCbt1tm2N9TnRmhx6bMN5wguIFVAk"
 radius = "500"
 
 #["43.5836","7.10905"]

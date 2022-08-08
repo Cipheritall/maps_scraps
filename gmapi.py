@@ -6,6 +6,10 @@ import datetime
 from time import sleep
 import numpy as np
 
+from config import *
+from centers import *
+
+
 
 
 def get_business_details(name,place_id,details="name%2Cwebsite%2Crating%2Cformatted_phone_number"):
@@ -59,7 +63,6 @@ def get_places_nearby(place_center,radius,business_type,keyword,next_page_token=
     url = f"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={location}&radius={radius}&type={business_type}&keyword={keyword}&key={key}"
   else:
     url = f"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={location}&radius={radius}&type={business_type}&keyword={keyword}&sensor=false&key={key}&pagetoken={next_page_token}"
-  print(url)
   payload={}
   headers = {}
   base_response = requests.request("GET", url, headers=headers, data=payload)
@@ -75,7 +78,6 @@ def scrap_n_business(n,place_center,radius,business_type,keyword):
   out_raw = scrap_n_business_subresults(current_shot.json()["results"])
   business_index += len(current_shot.json()["results"])
   last_shot = current_shot
-  #print(current_shot.json()["next_page_token"])
   while business_index<n or stop:
     sleep(2)
     token = ""
@@ -88,8 +90,6 @@ def scrap_n_business(n,place_center,radius,business_type,keyword):
     for out_raw_unit in current_out_raw:
       out_raw.append(out_raw_unit)
       business_index+=1
-    #print(current_shot.json())
     if str(current_shot.json().items()).find("INVALID_REQUEST")>0 or str(current_shot.json().items()).find("next_page_token")<0 :
-      print(current_shot.json().items())
       break
   return out_raw
